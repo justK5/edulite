@@ -1,0 +1,21 @@
+{
+  "name": "edulite",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "dev:landing": "pnpm --filter @apps/landing dev",
+    "dev:portal": "pnpm --filter @apps/portal dev",
+    "dev:internal": "pnpm --filter @apps/internal dev",
+    "dev:all": "concurrently -k \"pnpm dev:landing\" \"pnpm dev:portal\" \"pnpm dev:internal\"",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "concurrently": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "prettier": "latest",
+    "turbo": "latest"
+  }
+}
