@@ -1,5 +1,8 @@
-import { NextResponse } from 'next/server'
-
 export async function GET() {
-  return NextResponse.json({ ok: true, ts: Date.now() })
+  return Response.json({
+    ok: true,
+    vercelEnv: process.env.VERCEL_ENV ?? 'local',
+    node: process.version,
+    ts: Date.now()
+  })
 }
